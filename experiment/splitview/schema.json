@@ -1,0 +1,26 @@
+[
+  {
+    "namespace": "splitView",
+    "description": "API to create native Firefox split views",
+    "functions": [
+      {
+        "name": "create",
+        "type": "function",
+        "description": "Create a split view with two tabs",
+        "async": true,
+        "parameters": [
+          {
+            "name": "tabId1",
+            "type": "integer",
+            "description": "The ID of the first tab"
+          },
+          {
+            "name": "tabId2",
+            "type": "integer",
+            "description": "The ID of the second tab"
+          }
+        ]
+      }
+    ]
+  }
+]

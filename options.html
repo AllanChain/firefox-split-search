@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Split Search — Settings</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #1a1a2e;
+      background: #f8f9fa;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: #666;
+      margin-bottom: 32px;
+      font-size: 14px;
+    }
+    .engine-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .engine-card h2 {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #333;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: #555;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: #0060df;
+      box-shadow: 0 0 0 2px rgba(0, 96, 223, 0.2);
+    }
+    .url-field { font-family: monospace; font-size: 13px; }
+    .help { font-size: 12px; color: #888; margin-top: -8px; margin-bottom: 12px; }
+    button {
+      background: #0060df;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    button:hover { background: #003eaa; }
+    .status {
+      display: inline-block;
+      margin-left: 12px;
+      font-size: 14px;
+      color: #058b00;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .status.show { opacity: 1; }
+    .presets { margin-bottom: 16px; }
+    .usage {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 24px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .usage h2 { font-size: 16px; margin-bottom: 8px; }
+    code {
+      background: #e8e8e8;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Split Search</h1>
+  <p class="subtitle">Configure which search engines appear side by side.</p>
+
+  <div class="engine-card">
+    <h2>Left Panel</h2>
+    <div class="presets">
+      <label>Preset</label>
+      <select id="left-preset">
+        <option value="google">Google</option>
+        <option value="bing">Bing</option>
+        <option value="duckduckgo">DuckDuckGo</option>
+        <option value="yahoo">Yahoo</option>
+        <option value="baidu">Baidu</option>
+        <option value="yandex">Yandex</option>
+        <option value="custom">Custom</option>
+      </select>
+    </div>
+    <label>Name</label>
+    <input type="text" id="left-name" placeholder="Google">
+    <label>Search URL</label>
+    <input type="text" id="left-url" class="url-field" placeholder="https://www.google.com/search?q=%s">
+    <p class="help">Use <code>%s</code> as placeholder for the search query.</p>
+  </div>
+
+  <div class="engine-card">
+    <h2>Right Panel</h2>
+    <div class="presets">
+      <label>Preset</label>
+      <select id="right-preset">
+        <option value="bing">Bing</option>
+        <option value="google">Google</option>
+        <option value="duckduckgo">DuckDuckGo</option>
+        <option value="yahoo">Yahoo</option>
+        <option value="baidu">Baidu</option>
+        <option value="yandex">Yandex</option>
+        <option value="custom">Custom</option>
+      </select>
+    </div>
+    <label>Name</label>
+    <input type="text" id="right-name" placeholder="Bing">
+    <label>Search URL</label>
+    <input type="text" id="right-url" class="url-field" placeholder="https://www.bing.com/search?q=%s">
+    <p class="help">Use <code>%s</code> as placeholder for the search query.</p>
+  </div>
+
+  <button id="save">Save Settings</button>
+  <span class="status" id="status">Saved!</span>
+
+  <div class="usage">
+    <h2>How to Use</h2>
+    <p>1. Type <code>@split</code> in the address bar, press <kbd>Tab</kbd>, then type your search query.<br>
+    2. Both search engines will open in Firefox's native split view.<br>
+    3. Make sure <code>browser.tabs.splitView.enabled</code> is set to <code>true</code> in <code>about:config</code>.</p>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

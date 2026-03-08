@@ -4,6 +4,7 @@ A Firefox extension that searches two engines simultaneously and displays result
 
 ![Firefox Nightly](https://img.shields.io/badge/Firefox-Nightly%2FDevEdition-orange)
 ![Manifest V2](https://img.shields.io/badge/Manifest-V2-blue)
+![AI Generated](https://img.shields.io/badge/AI--Generated-90%25-D97706)
 
 ## Features
 
